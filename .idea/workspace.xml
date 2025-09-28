@@ -66,6 +66,7 @@
     "Application.Lwjgl3Launcher.executor": "Run",
     "Gradle.Build StarfishCollectorCh6.executor": "Run",
     "Gradle.StarfishCollectorCh5:lwjgl3 [:lwjgl3:Lwjgl3Launcher.main()].executor": "Run",
+    "Gradle.StarfishCollectorCh6:lwjgl3 [:lwjgl3:Lwjgl3Launcher.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
