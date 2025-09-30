@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf0a2ab7-de3d-4be7-baad-7ffa7526339b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/Master_of_the_Feast.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Ocean_Waves.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Water_Drop.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/de/nicolas/screens/LevelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/de/nicolas/screens/LevelScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/de/nicolas/utils/screens/BaseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/de/nicolas/utils/screens/BaseScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,20 +70,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Lwjgl3Launcher.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build StarfishCollectorCh6.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.StarfishCollectorCh5:lwjgl3 [:lwjgl3:Lwjgl3Launcher.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.StarfishCollectorCh6:lwjgl3 [:lwjgl3:Lwjgl3Launcher.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java/LibGDX/Apress/StarfishCollectorCh6&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Lwjgl3Launcher.executor": "Run",
+    "Gradle.Build StarfishCollectorCh6.executor": "Run",
+    "Gradle.StarfishCollectorCh5:lwjgl3 [:lwjgl3:Lwjgl3Launcher.main()].executor": "Run",
+    "Gradle.StarfishCollectorCh6:lwjgl3 [:lwjgl3:Lwjgl3Launcher.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Java/LibGDX/Apress/StarfishCollectorCh6/assets"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\LibGDX\Apress\StarfishCollectorCh6\assets" />
       <recent name="D:\Java\LibGDX\Apress\StarfishCollectorCh5\core\src\main\java\de" />
       <recent name="D:\Java\LibGDX\Apress\StarfishCollectorCh5" />
       <recent name="D:\Java\LibGDX\Apress\StarfishCollectorCh5\core\src\main\java\de\nicolas" />
@@ -115,5 +124,16 @@
       <updated>1758226834171</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/core/src/main/java/de/nicolas/screens/LevelScreen.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

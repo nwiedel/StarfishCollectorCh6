@@ -1,6 +1,8 @@
 package de.nicolas.screens;
 
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -21,6 +23,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputEvent.Type;
+import sun.jvm.hotspot.utilities.RobustOopDeterminator;
 
 public class LevelScreen extends BaseScreen {
 
@@ -30,6 +33,11 @@ public class LevelScreen extends BaseScreen {
     private Label starfishLabel;
 
     private DialogBox dialogBox;
+
+    private float audioVolume;
+    private Sound waterDrop;
+    private Music instrumental;
+    private Music oceanSurf;
 
     @Override
     public void initialize() {
@@ -66,11 +74,35 @@ public class LevelScreen extends BaseScreen {
 
         restartButton.addListener(
             (Event e) ->{
-                if (!(e instanceof InputEvent) ||
-                !((InputEvent)e).getType().equals(Type.touchDown)){
+                if (!isTouchDownEvent(e)){
                     return false;
                 }
+                instrumental.dispose();
+                oceanSurf.dispose();
+
                 StarfishGame.setActiveScreen(new LevelScreen());
+                return false;
+            }
+        );
+
+        ButtonStyle buttonStyle2 = new ButtonStyle();
+
+        Texture buttonTex2 = new Texture(Gdx.files.internal("assets/audio.png"));
+        TextureRegion buttonRegion2 = new TextureRegion(buttonTex2);
+        buttonStyle2.up = new TextureRegionDrawable(buttonRegion2);
+
+        Button muteButton = new Button(buttonStyle2);
+        muteButton.setColor(Color.CYAN);
+
+        muteButton.addListener(
+            (Event e) ->{
+                if (!isTouchDownEvent(e)){
+                    return false;
+                }
+                audioVolume = 1 - audioVolume;
+                instrumental.setVolume(audioVolume);
+                oceanSurf.setVolume(audioVolume);
+
                 return false;
             }
         );
@@ -92,10 +124,23 @@ public class LevelScreen extends BaseScreen {
         uiTable.pad(10);
         uiTable.add(starfishLabel).top();
         uiTable.add().expandX().expandY();
+        uiTable.add(muteButton).top();
         uiTable.add(restartButton).top();
 
         uiTable.row();
-        uiTable.add(dialogBox).colspan(3);
+        uiTable.add(dialogBox).colspan(4);
+
+        waterDrop = Gdx.audio.newSound(Gdx.files.internal("assets/Water_Drop.ogg"));
+        instrumental = Gdx.audio.newMusic(Gdx.files.internal("assets/Master_of_the_Feast.ogg"));
+        oceanSurf = Gdx.audio.newMusic(Gdx.files.internal("assets/Ocean_Waves.ogg"));
+
+        audioVolume = 1.00F;
+        instrumental.setLooping(true);
+        instrumental.setVolume(audioVolume);
+        instrumental.play();
+        oceanSurf.setLooping(true);
+        oceanSurf.setVolume(audioVolume);
+        oceanSurf.play();
     }
 
     @Override
@@ -109,6 +154,7 @@ public class LevelScreen extends BaseScreen {
             if ( turtle.overlaps(starfish) && !starfish.isCollected())
             {
                 starfish.setCollected(true);
+                waterDrop.play(audioVolume);
                 starfish.clearActions();
                 starfish.addAction( Actions.fadeOut(1) );
                 starfish.addAction( Actions.after( Actions.removeActor() ) );

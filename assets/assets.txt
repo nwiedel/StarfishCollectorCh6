@@ -1,4 +1,8 @@
+Master_of_the_Feast.ogg
+Ocean_Waves.ogg
 OpenSans.ttf
+Water_Drop.ogg
+audio.png
 button.png
 cooper.fnt
 cooper.png
